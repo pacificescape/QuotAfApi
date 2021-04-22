@@ -16,7 +16,7 @@ const getChar = settings => ({ y, x, char, ping, rowsTotal, currentRow, xOffset,
     y -= 33 * scaleIndex
   }
 
-  // task: переделать генерацию цвета
+  // todo: remake color generation
   const colors = {
     sharkSlideAnimation: [1, 1, 1, 1],
     keyboardAnimation: [0.32, 0.87, 0.30, 1]
