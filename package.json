@@ -1,0 +1,46 @@
+{
+  "name": "quotafapi",
+  "version": "1.1.0",
+  "description": "GENERATION API",
+  "main": "index.js",
+  "dependencies": {
+    "debug": "^4.3.1",
+    "dotenv": "^8.2.0",
+    "emoji-db": "^1.10.0",
+    "emoji-regex": "^9.0.0",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^8.0.8",
+    "lru-cache": "^6.0.0",
+    "node-gzip": "^1.1.2",
+    "mongoose": "^5.10.7",
+    "telegraf": "^3.38.0"
+  },
+  "devDependencies": {
+    "canvas": "^2.7.0",
+    "autocannon": "^7.2.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "eslint": "node_modules/.bin/eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pacificescape/quotafapi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pacificescape/quotafapi/issues"
+  },
+  "homepage": "https://github.com/pacificescape/quotafapi#readme"
+}
