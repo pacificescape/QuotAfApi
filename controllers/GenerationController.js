@@ -32,6 +32,20 @@ class GenerationController {
       console.log(error)
     }
   }
+
+  async inline (ctx) {
+    try {
+      ctx.assert(ctx.request.query, 404, 'DATA_INVALID')
+      const data = JSON.parse(Buffer.from(ctx.request.query.data, 'base64'))
+      ctx.assert(data.type, 404, 'TYPE_INVALID')
+
+      await Sticker.saveComponent(data.type)
+
+      ctx.result = await Sticker.create(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 }
 
 module.exports = new GenerationController()

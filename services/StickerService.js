@@ -47,16 +47,22 @@ class StickerService {
 
     const component = await Component.findOne({ file_unique_id: type })
     if (component) {
+      if (!component.assets) {
+        console.log(type)
+        return
+      }
       // todo: migrate
       let data = await ungzip(component.assets)
-      data = data instanceof Buffer ? JSON.parse(data) : data
+      data = data instanceof Buffer ? JSON.parse(data) : data[0]
 
       await this.save(
         type,
         data.json && data.options
-          ? data
+          ? JSON.stringify(data)
           : JSON.stringify({ json: data, options: component.options ? component.options : { rotate: 1 } })
-      )
+      ).catch((error) => {
+        console.log(error, data)
+      })
     }
   }
 
