@@ -6,7 +6,9 @@ const ApiHelper = require('./middlewares/ApiHelper')
 const app = new Koa()
 
 app.use(logger())
-app.use(bodyParser())
+app.use(bodyParser({
+  jsonLimit: '5mb'
+}))
 app.use(ApiHelper)
 app.use(api.routes())
 
